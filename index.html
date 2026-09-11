@@ -1,39 +1,137 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Айдар — ИТ-услуги, Казань</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Айдар Хайрутдинов — ИТ‑услуги, Казань</title>
   <style>
+    :root {
+      --primary: #0056b3;       /* насыщенный синий — как ты хотел */
+      --primary-hover: #004494;
+      --dark: #1a1a1a;
+      --gray: #555;
+      --light: #f9f9f9;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #2b5e8b;       /* спокойный синий фон */
-      color: #ffffff;                 /* белый текст */
-      font-family: Arial, sans-serif; /* простой читаемый шрифт */
-      margin: 0;
-      padding: 40px 20px;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--dark);
+      line-height: 1.5;
+      background: var(--light);
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      padding: 60px 0 40px;
+      text-align: center;
     }
     h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-      line-height: 1.2;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--dark);
     }
-    p {
-      font-size: 18px;
-      line-height: 1.6;
+    .tagline {
+      color: var(--gray);
+      font-size: 1.1rem;
+      max-width: 560px;
+      margin: 0 auto;
     }
-    a {
-      color: #ffd700;                 /* жёлтая ссылка — хорошо видно на синем */
-      text-decoration: none;          /* без подчёркивания */
-      font-weight: bold;
+
+    section { padding: 40px 0; }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
     }
-    a:hover {
-      opacity: 0.8;                   /* чуть тускнеет при наведении */
+    .service-card {
+      background: var(--white);
+      padding: 24px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .service-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    .service-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+    }
+
+    .contact-block {
+      background: #fff;
+      padding: 48px;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      text-align: center;
+      border: 1px solid #e5e5e5;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: var(--white);
+      padding: 16px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+    .btn:hover {
+      background: var(--primary-hover);
+    }
+
+    footer {
+      padding: 40px 0;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 1px solid #eee;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <h1>Айдар — ИТ‑услуги</h1>
-  <p>Город: Казань</p>
-  <p>Связь: <a href="mailto:Aidar443@yandex.ru">Aidar443@yandex.ru</a></p>
-  <p>Настройка ПК, восстановление, установка ПО, калькуляторы под бизнес.</p>
+  <div class="container">
+    <header>
+      <h1>Айдар Хайрутдинов</h1>
+      <p class="tagline">ИТ‑услуги в Казани. Работаю как ИП: официально, с чеками, без сюрпризов.</p>
+    </header>
+
+    <section>
+      <h2 style="font-size:1.5rem; margin-bottom:24px; color:var(--dark)">Что делаю</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Настройка и восстановление ПК</h3>
+          <p>Привожу компьютер в рабочее состояние: чистка, диагностика, устранение ошибок.</p>
+        </div>
+        <div class="service-card">
+          <h3>Установка и адаптация ПО</h3>
+          <p>Windows, драйверы, офисные и рабочие программы — ставлю и настраиваю под ваши задачи.</p>
+        </div>
+        <div class="service-card">
+          <h3>Калькуляторы под бизнес</h3>
+          <p>Делаю простые инструменты, где клиент считает сам, а заявка сразу падает вам на почту.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-block">
+      <h2 style="margin-bottom:12px; color:var(--dark)">Готовы начать?</h2>
+      <p style="color:var(--gray); margin-bottom:24px;">Отвечу за 5 минут, расскажу сроки и стоимость. Работаю удалённо и по своему кругу.</p>
+      <a href="mailto:Aidar443@yandex.ru" class="btn">Написать на почту</a>
+    </section>
+
+    <footer>
+      ИП Хайрутдинов Айдар Тагирович • Казань • УСН • Чеки
+    </footer>
+  </div>
 </body>
 </html>
