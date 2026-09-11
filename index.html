@@ -12,7 +12,6 @@
       --card-bg: #1f2d45;
       --text-main: #ffffff;
       --text-muted: #bcc8d9;
-      --white: #ffffff;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -36,7 +35,7 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 12px;
-      color: var(--white);
+      color: var(--text-main);
     }
     .tagline {
       color: var(--text-muted);
@@ -62,7 +61,7 @@
     .service-card h3 {
       font-size: 1.25rem;
       margin-bottom: 8px;
-      color: var(--white);
+      color: var(--text-main);
     }
     .service-card p {
       color: var(--text-muted);
@@ -80,7 +79,7 @@
     .btn {
       display: inline-block;
       background: var(--primary);
-      color: var(--white);
+      color: #fff;
       padding: 16px 36px;
       border-radius: 6px;
       text-decoration: none;
@@ -93,21 +92,6 @@
       background: var(--primary-hover);
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(0,86,179,0.4);
-    }
-    .btn:active {
-      transform: translateY(0);
-    }
-    .email-fallback {
-      margin-top: 20px;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-    .email-fallback a {
-      color: #5b9bf5;
-      text-decoration: none;
-    }
-    .email-fallback a:hover {
-      text-decoration: underline;
     }
 
     footer {
@@ -124,34 +108,31 @@
   <div class="container">
     <header>
       <h1>Айдар Хайрутдинов</h1>
-      <p class="tagline">ИТ‑услуги в Казани. Работаю как ИП: официально, с чеками, без сюрпризов.</p>
+      <p class="tagline">ИТ‑услуги в Казани. Работаю как ИП: официально, с чеками.</p>
     </header>
 
     <section>
-      <h2 style="font-size:1.5rem; margin-bottom:24px; color:var(--white)">Что делаю</h2>
+      <h2 style="font-size:1.5rem; margin-bottom:24px; color:var(--text-main)">Что делаю</h2>
       <div class="services-grid">
         <div class="service-card">
           <h3>Настройка и восстановление ПК</h3>
-          <p>Привожу компьютер в рабочее состояние: чистка, диагностика, устранение ошибок.</p>
+          <p>Чистка, диагностика, устранение ошибок — привожу компьютер в порядок.</p>
         </div>
         <div class="service-card">
           <h3>Установка и адаптация ПО</h3>
-          <p>Windows, драйверы, офисные и рабочие программы — ставлю и настраиваю под ваши задачи.</p>
+          <p>Windows, драйверы, программы — ставлю и настраиваю под задачи клиента.</p>
         </div>
         <div class="service-card">
           <h3>Калькуляторы под бизнес</h3>
-          <p>Делаю простые инструменты, где клиент считает сам, а заявка сразу падает вам на почту.</p>
+          <p>Делаю простые инструменты: клиент считает сам, заявка падает вам на почту.</p>
         </div>
       </div>
     </section>
 
     <section class="contact-block">
-      <h2 style="margin-bottom:12px; color:var(--white)">Готовы начать?</h2>
+      <h2 style="margin-bottom:12px; color:var(--text-main)">Готовы начать?</h2>
       <p style="color:var(--text-muted); margin-bottom:24px;">Отвечу за 5 минут, расскажу сроки и стоимость.</p>
-      <a href="https://mail.yandex.ru/compose?to=Aidar443@yandex.ru&subject=Заявка%20с%20сайта&body=Здравствуйте!%20Пишу%20с%20вашего%20сайта.%20Меня%20интересует:" target="_blank" class="btn">Написать на почту</a>
-      <p class="email-fallback">
-        Или скопируйте адрес: <a href="mailto:Aidar443@yandex.ru">Aidar443@yandex.ru</a>
-      </p>
+      <a href="https://www.avito.ru/brands/b20a695878942655153a68e163929546" target="_blank" class="btn">Перейти на Авито и написать мне</a>
     </section>
 
     <footer>
