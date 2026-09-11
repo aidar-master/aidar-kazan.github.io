@@ -8,8 +8,8 @@
     :root {
       --primary: #0056b3;
       --primary-hover: #004494;
-      --bg-dark: #122033;          /* тёмно‑синий фон */
-      --card-bg: #1f2d45;          /* чуть светлее для карточек */
+      --bg-dark: #122033;
+      --card-bg: #1f2d45;
       --text-main: #ffffff;
       --text-muted: #bcc8d9;
       --white: #ffffff;
@@ -97,6 +97,18 @@
     .btn:active {
       transform: translateY(0);
     }
+    .email-fallback {
+      margin-top: 20px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+    .email-fallback a {
+      color: #5b9bf5;
+      text-decoration: none;
+    }
+    .email-fallback a:hover {
+      text-decoration: underline;
+    }
 
     footer {
       padding: 40px 0;
@@ -135,8 +147,11 @@
 
     <section class="contact-block">
       <h2 style="margin-bottom:12px; color:var(--white)">Готовы начать?</h2>
-      <p style="color:var(--text-muted); margin-bottom:24px;">Отвечу за 5 минут, расскажу сроки и стоимость. Работаю удалённо и по своему кругу.</p>
-      <a href="mailto:Aidar443@yandex.ru?subject=Заявка%20с%20сайта&body=Здравствуйте!%20Пишу%20с%20вашего%20сайта.%20Меня%20интересует:" class="btn">Написать на почту</a>
+      <p style="color:var(--text-muted); margin-bottom:24px;">Отвечу за 5 минут, расскажу сроки и стоимость.</p>
+      <a href="https://mail.yandex.ru/compose?to=Aidar443@yandex.ru&subject=Заявка%20с%20сайта&body=Здравствуйте!%20Пишу%20с%20вашего%20сайта.%20Меня%20интересует:" target="_blank" class="btn">Написать на почту</a>
+      <p class="email-fallback">
+        Или скопируйте адрес: <a href="mailto:Aidar443@yandex.ru">Aidar443@yandex.ru</a>
+      </p>
     </section>
 
     <footer>
