@@ -35,9 +35,21 @@
     .price { font-weight: bold; color: var(--primary); font-size: 18px; margin-bottom: 12px; }
     .desc { color: var(--gray); font-size: 14px; }
 
-    /* Why reviews block */
+    /* Reviews note */
     .reviews-note { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; border-radius: 8px; margin: 32px 0; }
     .reviews-note h3 { margin: 0 0 12px 0; color: var(--primary-dark); }
+
+    /* Demo block */
+    .demo-block { background: #ffffff; padding: 30px; border: 1px dashed #cbd5e1; border-radius: 12px; text-align: center; }
+    .demo-block h3 { color: var(--primary-dark); margin-bottom: 12px; }
+
+    /* Formspree form */
+    .form-block { max-width: 500px; margin: 0 auto; background: var(--card); padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; margin-bottom: 6px; color: var(--text); font-weight: 500; }
+    .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 15px; }
+    button[type="submit"] { background: var(--primary); color: white; padding: 12px 24px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
+    button[type="submit"]:hover { background: var(--primary-dark); }
 
     /* CTA */
     .cta-block { background: var(--primary); color: white; padding: 40px; text-align: center; border-radius: 16px; margin: 40px 0; }
@@ -109,42 +121,78 @@
       <div class="grid-3">
         <div class="card">
           <h3>Калькулятор СТО</h3>
-          <div class="price">от 1 000 ₽</div>
+          <div class="price">от 6 000 ₽</div>
           <p class="desc">Окупаемость, маржа по работам и запчастям, налог УСН 6%.</p>
         </div>
         <div class="card">
           <h3>Грузоперевозки + грузчики</h3>
-          <div class="price">от 1 000 ₽</div>
+          <div class="price">от 6 000 ₽</div>
           <p class="desc">Расчёт по зонам, тоннажу, этажам, минимальному времени.</p>
         </div>
         <div class="card">
           <h3>ИТ‑услуги</h3>
-          <div class="price">от 1 000 ₽</div>
+          <div class="price">от 6 000 ₽</div>
           <p class="desc">Тарифы, надбавки, минимальный заказ, скидки — всё в одном инструменте.</p>
         </div>
         <div class="card">
           <h3>Себестоимость и маржинальность</h3>
-          <div class="price">от 1 000 ₽</div>
+          <div class="price">от 6 000 ₽</div>
           <p class="desc">Плановая и фактическая стоимость, расчёт договорной цены.</p>
         </div>
         <div class="card">
           <h3>Коммерческие предложения</h3>
-          <div class="price">от 1 000 ₽</div>
+          <div class="price">от 6 000 ₽</div>
           <p class="desc">Автоматический расчёт КП под клиента: объёмы, сроки, цена.</p>
         </div>
         <div class="card">
           <h3>Реестр заявок и работ</h3>
-          <div class="price">от 1 000 ₽</div>
+          <div class="price">от 6 000 ₽</div>
           <p class="desc">Простой учёт заявок, статусов, выполненных работ и оплат.</p>
         </div>
       </div>
+    </section>
+
+    <section class="demo-block">
+      <h3>👉 Хотите посмотреть, как это выглядит вживую?</h3>
+      <p>Есть демо‑версии калькуляторов (вкладки, адаптив, логика расчёта). Напишите «демо» в форме ниже — пришлю ссылку на GitHub Pages, где можно пощёлкать все режимы.</p>
+    </section>
+
+    <section>
+      <h2>Форма заявки (Formspree)</h2>
+      <!-- Замени YOUR_FORM_SPREE_URL на свою ссылку из Formspree -->
+      <form action="https://formspree.io/f/YOUR_FORM_SPREE_URL" method="POST" class="form-block">
+        <div class="form-group">
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" name="name" required placeholder="Иван">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="mail@example.com">
+        </div>
+        <div class="form-group">
+          <label for="service">Что интересует</label>
+          <select id="service" name="service" required>
+            <option value="">Выберите услугу</option>
+            <option value="установка windows">Установка Windows / настройка ПК</option>
+            <option value="калькулятор сто">Калькулятор СТО</option>
+            <option value="калькулятор грузоперевозки">Калькулятор грузоперевозки + грузчики</option>
+            <option value="калькулятор ит">Калькулятор ИТ‑услуг</option>
+            <option value="другое">Другое (опишите в комментарии)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="comment">Комментарий / задача</label>
+          <textarea id="comment" name="comment" rows="4" placeholder="Например: нужен калькулятор СТО с учётом налога УСН 6%, маржи по работам и запчастям..."></textarea>
+        </div>
+        <button type="submit">Отправить заявку</button>
+      </form>
     </section>
 
     <section class="cta-block">
       <h2>Консультация ни к чему не обязывает</h2>
       <p style="margin-bottom: 20px; font-size: 16px;">Достаточно рассказать, что хотите получить — без сложных ТЗ. Перенесу ваши тарифы и правила в понятный интерфейс.</p>
       <a href="mailto:Aidar443@yandex.ru" class="btn">Написать на почту</a>
-      <p style="margin-top: 16px; font-size: 13px; opacity: 0.8;">Или напишите «калькулятор» в любом объявлении — пришлю демо‑версию.</p>
+      <p style="margin-top: 16px; font-size: 13px; opacity: 0.8;">Или оставьте заявку в форме — пришлю демо‑версию и список 3–4 цифр, которые нужно прислать для адаптации.</p>
     </section>
 
     <footer>
