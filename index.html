@@ -11,8 +11,8 @@
       --bg: #F9FAFB;
       --white: #FFFFFF;
       --text: #333;
+      --gray: #9CA3AF;
     }
-
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       margin: 0;
@@ -21,31 +21,15 @@
       color: var(--text);
       line-height: 1.6;
     }
-
     header {
       background-color: var(--primary);
       color: var(--white);
       padding: 2.5rem 1rem;
       text-align: center;
     }
-
-    h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 2.4rem;
-    }
-
-    p.subtitle {
-      margin: 0;
-      opacity: 0.95;
-      font-size: 1.15rem;
-    }
-
-    main {
-      max-width: 960px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
+    h1 { margin: 0 0 0.5rem 0; font-size: 2.4rem; }
+    p.subtitle { margin: 0; opacity: 0.95; font-size: 1.15rem; }
+    main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
     .section-title {
       color: var(--primary);
       border-bottom: 3px solid var(--accent);
@@ -54,75 +38,49 @@
       margin-bottom: 1.8rem;
       font-size: 1.5rem;
     }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.8rem;
-    }
-
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; }
     .card {
-      background: var(--white);
-      padding: 1.7rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.2s;
+      background: var(--white); padding: 1.7rem; border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;
+    }
+    .card:hover { transform: translateY(-4px); }
+    
+    /* Генератор ТЗ */
+    .form-group { margin-bottom: 0.8rem; }
+    label { display: block; margin-bottom: 0.4rem; font-weight: 500; }
+    input[type="text"], select { width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 6px; }
+    #generated-task { margin-top: 1rem; padding: 1rem; background: #f3f4f6; border-radius: 6px; white-space: pre-wrap; display: none; }
+
+    /* Калькулятор окупаемости */
+    .calc-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+    .calc-input { flex: 1; min-width: 180px; padding: 0.6rem; border: 1px solid #ddd; border-radius: 6px; }
+    #savings-result { margin-top: 1rem; padding: 1rem; background: rgba(59,130,206,0.1); border-radius: 6px; display: none; color: var(--primary); font-weight: 600; }
+
+    /* Квиз */
+    .quiz-step { display: none; animation: fadeIn 0.3s; }
+    .quiz-step.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
+    .recommendation { margin-top: 1.5rem; padding: 1.2rem; background: var(--accent); color: var(--white); border-radius: 8px; text-align: center; }
+
+    /* Таймлайн */
+    .timeline { position: relative; padding-left: 24px; border-left: 1px dashed #ccc; }
+    .step { margin-bottom: 1.2rem; position: relative; }
+    .step::before {
+      content: ""; position: absolute; left: -18px; top: 4px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.2rem;
-      margin-top: 1.5rem;
-    }
-
-    .benefit-item {
-      background: rgba(59, 130, 206, 0.06);
-      padding: 1rem;
-      border-radius: 8px;
-      color: #333;
-    }
-
-    .cases-list {
-      list-style: none;
-      padding: 0;
-    }
-
-    .cases-list li {
-      background: var(--white);
-      margin-bottom: 1.2rem;
-      padding: 1.4rem;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
-      border-left: 5px solid var(--accent);
-    }
-
+    /* Кнопки */
     .btn {
-      display: inline-block;
-      background: var(--accent);
-      color: var(--white);
-      padding: 0.9rem 1.6rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.05rem;
-      transition: background 0.25s, transform 0.25s;
+      display: inline-block; background: var(--accent); color: var(--white);
+      padding: 0.9rem 1.6rem; border-radius: 8px; text-decoration: none;
+      font-weight: 600; transition: background 0.25s, transform 0.25s;
     }
-
-    .btn:hover {
-      background: #2b6cb0;
-      transform: scale(1.03);
-    }
+    .btn:hover { background: #2b6cb0; transform: scale(1.03); }
+    .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
+    .btn-outline:hover { background: var(--primary); color: var(--white); }
 
     footer {
-      text-align: center;
-      padding: 3rem 1rem;
-      color: #666;
-      font-size: 0.9rem;
+      text-align: center; padding: 3rem 1rem; color: #666; font-size: 0.9rem;
       border-top: 1px solid #e5e7eb;
     }
   </style>
@@ -131,53 +89,154 @@
 
   <header>
     <h1>Айдар Хайрутдинов</h1>
-    <p class="subtitle">ИТ‑услуги и разработка простых инструментов • ИП, УСН 6%, работаю по всей России</p>
+    <p class="subtitle">ИТ‑услуги и автоматизация • ИП, УСН 6%, работаю по всей России</p>
   </header>
 
   <main>
+    <!-- Услуги -->
     <section>
-      <h2 class="section-title">Услуги</h2>
-      <div class="services-grid">
+      <h2 class="section-title">Что я делаю</h2>
+      <div class="grid-3">
         <div class="card">
           <h3>Установка и настройка Windows</h3>
-          <p>Чистая установка, активация, драйверы, базовая настройка под задачи клиента.</p>
+          <p>Чистая установка, драйверы, базовая настройка под задачи клиента.</p>
         </div>
         <div class="card">
           <h3>Чистка от пыли и мелкий ремонт</h3>
-          <p>Профилактика перегрева, чистка, замена термопасты, диагностика неисправностей.</p>
+          <p>Профилактика перегрева, чистка, замена термопасты, диагностика.</p>
         </div>
         <div class="card">
           <h3>Разработка простых инструментов</h3>
-          <p>Калькуляторы, формы, мини‑лендинги на GitHub Pages, автоматизация расчётов.</p>
+          <p>Калькуляторы, формы, мини‑лендинги, автоматизация расчётов.</p>
         </div>
       </div>
     </section>
 
+    <!-- Генератор ТЗ -->
     <section style="margin-top: 2.5rem;">
-      <h2 class="section-title">Почему удобно работать удалённо</h2>
-      <div class="benefits-grid">
-        <div class="benefit-item">✅ Результат сразу ссылкой — калькулятор или страница на GitHub Pages</div>
-        <div class="benefit-item">✅ Официально: ИП, чек ККТ, договор/счёт по запросу</div>
-        <div class="benefit-item">✅ Работаю по всей России — не нужно никуда ехать</div>
-        <div class="benefit-item">✅ Поддержка после сдачи: 1 круг правок включён</div>
+      <h2 class="section-title">Сформируйте ТЗ за 30 секунд</h2>
+      <div style="max-width: 600px; margin: 0 auto;">
+        <div class="form-group">
+          <label>Тип задачи</label>
+          <select id="task-type">
+            <option value="калькулятор">Простой калькулятор (HTML+JS)</option>
+            <option value="лендинг">Мини‑лендинг / витрина</option>
+            <option value="форма">Форма заявок + интеграция</option>
+            <option value="автоматизация">Автоматизация расчётов</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Срок</label>
+          <select id="deadline">
+            <option value="срочно">Срочно (1 рабочий день)</option>
+            <option value="3дня">3 рабочих дня</option>
+            <option value="неделя">До недели</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Бюджет (ориентир)</label>
+          <input type="text" id="budget" placeholder="Например: до 15 000 ₽">
+        </div>
+        <button type="button" onclick="generateTask()" class="btn">Сгенерировать ТЗ</button>
+        <div id="generated-task"></div>
       </div>
     </section>
 
+    <!-- Калькулятор окупаемости -->
     <section style="margin-top: 2.5rem;">
-      <h2 class="section-title">Кейсы</h2>
-      <ul class="cases-list">
-        <li>
-          <strong>Калькулятор линолеума</strong><br>
-          Расчёт площади с запасом, округление, варианты по ширине рулона. Реализован на GitHub Pages.
-        </li>
-        <li>
-          <strong>Мини‑лендинг для КП</strong><br>
-          Страница с выбором услуги, сроками и итоговой стоимостью — чтобы клиент сразу видел, сколько выйдет.
-        </li>
-      </ul>
+      <h2 class="section-title">Сколько вы теряете на рутине</h2>
+      <div style="max-width: 600px; margin: 0 auto;">
+        <div class="calc-row">
+          <div>
+            <label>Заявок в месяц</label>
+            <input type="number" id="leads-per-month" class="calc-input" value="100">
+          </div>
+          <div>
+            <label>Минут на расчёт вручную</label>
+            <input type="number" id="minutes-per-calc" class="calc-input" value="10">
+          </div>
+        </div>
+        <div class="calc-row">
+          <div>
+            <label>Ставка в час (₽)</label>
+            <input type="number" id="hourly-rate" class="calc-input" value="300">
+          </div>
+        </div>
+        <button type="button" onclick="calculateSavings()" class="btn btn-outline">Посчитать экономию</button>
+        <div id="savings-result"></div>
+      </div>
     </section>
 
+    <!-- Мини‑квиз -->
+    <section style="margin-top: 2.5rem;">
+      <h2 class="section-title">Тест: какой вариант подойдёт вам</h2>
+      <div id="quiz">
+        <div class="quiz-step active">
+          <h3>Шаг 1/4</h3>
+          <p>Вы хотите разовое решение или чтобы работало каждый день?</p>
+          <button onclick="quizAnswer('разовое')" class="btn">Разовое (сделали и забыли)</button>
+          <button onclick="quizAnswer('ежедневно')" class="btn">Ежедневно (чтобы работало постоянно)</button>
+        </div>
+        <div class="quiz-step">
+          <h3>Шаг 2/4</h3>
+          <p>Важно, чтобы вы могли править сами, или пусть делает мастер?</p>
+          <button onclick="quizAnswer('сам')" class="btn">Хочу сам править (простой шаблон)</button>
+          <button onclick="quizAnswer('мастер')" class="btn">Пусть делает мастер (кастомный)</button>
+        </div>
+        <div class="quiz-step">
+          <h3>Шаг 3/4</h3>
+          <p>Готовы платить за доработки, или «сделали и забыли»?</p>
+          <button onclick="quizAnswer('доработки')" class="btn">Да, готов к доработкам</button>
+          <button onclick="quizAnswer('бездоработок')" class="btn">Без доработок, сразу финальный вариант</button>
+        </div>
+        <div class="quiz-step">
+          <h3>Шаг 4/4</h3>
+          <p>Какой бюджет ближе?</p>
+          <button onclick="quizAnswer('до5')" class="btn">До 5 000 ₽</button>
+          <button onclick="quizAnswer('до15')" class="btn">До 15 000 ₽</button>
+          <button onclick="quizAnswer('любой')" class="btn">Любой, главное — результат</button>
+        </div>
+        <div id="quiz-result" class="recommendation" style="display:none;"></div>
+      </div>
+    </section>
+
+    <!-- Процесс работы -->
+    <section style="margin-top: 2.5rem;">
+      <h2 class="section-title">Как я работаю (прозрачно)</h2>
+      <div class="timeline">
+        <div class="step">
+          <strong>День 1</strong>: Обсуждаем задачу, фиксируем сроки, предоплата 50%.
+        </div>
+        <div class="step">
+          <strong>День 2</strong>: Прототип/черновик, согласование правок.
+        </div>
+        <div class="step">
+          <strong>День 3</strong>: Финальная версия, чек ККТ, передача кода и инструкции.
+        </div>
+      </div>
+      <p style="margin-top: 1.5rem;">Чек‑лист для клиента (что подготовить перед стартом):</p>
+      <ul style="margin-left: 24px;">
+        <li>Ссылка на сайт/маркетплейс (если есть)</li>
+        <li>Примеры, которые нравятся (скриншоты, ссылки)</li>
+        <li>Список полей для расчёта (если калькулятор)</li>
+        <li>Предпочитаемые цвета/стиль (если лендинг)</li>
+      </ul>
+      <button type="button" onclick="downloadChecklist()" class="btn btn-outline" style="margin-top: 1rem;">Скачать чек‑лист (TXT)</button>
+    </section>
+
+    <!-- Кейсы и заказ -->
     <section style="margin-top: 3rem; text-align: center;">
+      <h2 class="section-title">Кейсы</h2>
+      <div style="max-width: 700px; margin: 1.5rem auto;">
+        <div class="card" style="text-align: left;">
+          <strong>Калькулятор линолеума</strong><br>
+          Расчёт площади с запасом, округление, варианты по ширине рулона. Реализован на GitHub Pages.
+        </div>
+        <div class="card" style="text-align: left; margin-top: 1rem;">
+          <strong>Мини‑лендинг для КП</strong><br>
+          Страница с выбором услуги, сроками и итоговой стоимостью — клиент сразу видит, сколько выйдет.
+        </div>
+      </div>
       <h2 class="section-title">Заказать расчёт или инструмент</h2>
       <p>Расскажите про задачу — предложу 2–3 варианта решения и сроки.</p>
       <a href="mailto:Aidar443@yandex.ru" class="btn">Написать на почту</a>
@@ -188,5 +247,26 @@
     ИП Хайрутдинов А. Т. • ИНН 166106277773 • ОГРНИП 325169000071815 • УСН 6% • Работаю официально, выдаю кассовые чеки по 54‑ФЗ
   </footer>
 
-</body>
-</html>
+  <script>
+    // Генератор ТЗ
+    function generateTask() {
+      const type = document.getElementById('task-type').value;
+      const deadline = document.getElementById('deadline').value;
+      const budget = document.getElementById('budget').value;
+
+      const taskText = `Задача: ${type}.\nСрок: ${deadline}.\nБюджет: ${budget}.\nРезультат: ссылка на GitHub Pages + архив с кодом.\nДополнительно: чек ККТ по факту оплаты.`;
+
+      document.getElementById('generated-task').textContent = taskText;
+      document.getElementById('generated-task').style.display = 'block';
+    }
+
+    // Калькулятор окупаемости
+    function calculateSavings() {
+      const leads = parseInt(document.getElementById('leads-per-month').value) || 100;
+      const minutes = parseInt(document.getElementById('minutes-per-calc').value) || 10;
+      const rate = parseInt(document.getElementById('hourly-rate').value) || 300;
+
+      const hoursPerMonth = (leads * minutes) / 60;
+      const moneyLost = hoursPerMonth * rate;
+
+      const result = `При текущих объёмах вы теряете примерно ${moneyLost.toLocaleString()} ₽ в месяц на рутине.\nПростой инструмент окупается за 1–2 месяца
