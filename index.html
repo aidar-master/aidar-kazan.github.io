@@ -3,138 +3,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Айдар — ИТ-мастер | Установка Windows, ремонт ПК и ноутбуков</title>
-  <meta name="description" content="ИТ-услуги по всей России: установка Windows, чистка ноутбуков, настройка ПО. Выезды по Казани. ИП Хайрутдинов А.Т.">
+  <title>Имя Фамилия — Творчество</title>
+  <meta name="description" content="Портфолио художника/дизайнера/фотографа: лучшие работы и заказ проектов.">
   <style>
+    :root {
+      --bg: #f9f9f9;
+      --card-bg: #ffffff;
+      --accent: #d4a373; /* тёплый «художественный» цвет */
+      --text: #222;
+      --muted: #777;
+    }
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; color: #2c3e50; background: #f0f2f5; line-height: 1.6; }
-    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+    body {
+      font-family: Georgia, serif; /* чуть «арт-хаусный» шрифт */
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-    .header { text-align: center; padding: 40px 20px 30px; background: #1a1a2e; color: #fff; border-radius: 0 0 20px 20px; }
-    .header h1 { font-size: 28px; margin-bottom: 8px; }
-    .header p { font-size: 15px; color: #aaa; }
-    .header .badge { display: inline-block; margin-top: 10px; padding: 4px 12px; background: #007bff; border-radius: 20px; font-size: 13px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
-    .packages { margin: 30px 0; }
-    .packages h2 { text-align: center; margin-bottom: 20px; font-size: 22px; }
-    .package { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-    .package h3 { font-size: 18px; color: #1a1a2e; margin-bottom: 8px; }
-    .package .price { font-size: 22px; font-weight: bold; color: #007bff; }
-    .package p { color: #555; font-size: 14px; margin-top: 6px; }
-    .package ul { margin-top: 10px; padding-left: 20px; color: #555; font-size: 14px; }
-    .package li { margin-bottom: 4px; }
+    header {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 8px; line-height: 1; }
+    header p { color: var(--muted); font-size: 1.1rem; }
+    .role { color: var(--accent); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-top: 6px; }
 
-    .form-section { background: #fff; border-radius: 12px; padding: 28px; margin: 30px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
-    .form-section h2 { font-size: 20px; margin-bottom: 6px; color: #1a1a2e; }
-    .form-section .subtitle { color: #666; font-size: 14px; margin-bottom: 20px; }
-    .form-section label { display: block; font-weight: bold; color: #333; margin-bottom: 4px; font-size: 14px; }
-    .form-section input, .form-section textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; margin-bottom: 14px; font-family: Arial, sans-serif; }
-    .form-section input:focus, .form-section textarea:focus { border-color: #007bff; outline: none; }
-    .form-section button { width: 100%; padding: 14px; background: #007bff; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; }
-    .form-section button:hover { background: #0056b3; }
-    .form-section .success-msg { display: none; text-align: center; padding: 20px; background: #d4edda; color: #155724; border-radius: 8px; margin-top: 15px; font-size: 16px; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 50px 0;
+    }
+    .work {
+      position: relative;
+      overflow: hidden;
+      border-radius: 4px;
+      background: #eee;
+    }
+    .work img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .work:hover img { transform: scale(1.05); }
+    .work-info {
+      padding: 16px;
+    }
+    .work-title {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    .work-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-    .contacts { text-align: center; padding: 20px; background: #1a1a2e; color: #aaa; border-radius: 12px; margin: 30px 0; font-size: 14px; }
-    .contacts a { color: #4da3ff; text-decoration: none; }
-    .contacts a:hover { text-decoration: underline; }
+    .about {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      text-align: center;
+      color: var(--muted);
+    }
+    .about p { margin-bottom: 12px; }
 
-    .footer { text-align: center; padding: 20px; color: #888; font-size: 12px; }
+    /* Форма */
+    .contact-section {
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+    .contact-section h2 { text-align: center; margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; margin-bottom: 6px; font-weight: 500; }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px;
+      font-family: inherit; font-size: 1rem;
+    }
+    button[type="submit"] {
+      width: 100%; padding: 14px; background: var(--accent); color: #fff;
+      border: none; border-radius: 6px; font-size: 1rem; font-weight: bold; cursor: pointer;
+    }
+    button[type="submit"]:hover { background: #b88b5a; }
+
+    footer {
+      text-align: center; padding: 40px 0; color: var(--muted); font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      header h1 { font-size: 2rem; }
+      .gallery { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <div class="header">
-      <h1>Айдар — ИТ-мастер</h1>
-      <p>Установка Windows, ремонт ПК и ноутбуков, настройка ПО</p>
-      <span class="badge">Работаю по всей России · Выезды по Казани</span>
-    </div>
+    <header>
+      <h1>Имя Фамилия</h1>
+      <p>Лучшие работы и проекты</p>
+      <div class="role">Иллюстратор / Дизайнер / Фотограф</div>
+    </header>
 
-    <div class="packages">
-      <h2>Готовые пакеты — сразу понятно, сколько стоит</h2>
+    <!-- Галерея работ -->
+    <section class="gallery">
+      <!-- Работа 1 -->
+      <article class="work">
+        <img src="https://via.placeholder.com/600x400/d4a373/ffffff?text=Работа+1" alt="Описание работы 1">
+        <div class="work-info">
+          <div class="work-title">Название проекта 1</div>
+          <div class="work-desc">Иллюстрация, цифровая графика, 2026</div>
+        </div>
+      </article>
 
-      <div class="package">
-        <h3>«Быстрая чистка и диагностика»</h3>
-        <span class="price">1500 ₽</span>
-        <p>Чистка от пыли, замена термопасты, проверка SSD/HDD, базовая диагностика.</p>
-        <ul>
-          <li>Разборка и чистка системы охлаждения</li>
-          <li>Проверка температур и состояния дисков</li>
-          <li>Рекомендации по апгрейду</li>
-        </ul>
-      </div>
+      <!-- Работа 2 -->
+      <article class="work">
+        <img src="https://via.placeholder.com/600x400/a3d473/ffffff?text=Работа+2" alt="Описание работы 2">
+        <div class="work-info">
+          <div class="work-title">Название проекта 2</div>
+          <div class="work-desc">Фотопроект, репортажная съёмка, 2025</div>
+        </div>
+      </article>
 
-      <div class="package">
-        <h3>«Установка Windows + софт»</h3>
-        <span class="price">3500 ₽</span>
-        <p>Чистая установка ОС, драйверов, базового софта и антивируса.</p>
-        <ul>
-          <li>Windows 10/11 на ваш выбор</li>
-          <li>Драйверы и обновления</li>
-          <li>Офис, браузер, антивирус, архиватор</li>
-          <li>Перенос данных со старой системы</li>
-        </ul>
-      </div>
+      <!-- Работа 3 -->
+      <article class="work">
+        <img src="https://via.placeholder.com/600x400/73a3d4/ffffff?text=Работа+3" alt="Описание работы 3">
+        <div class="work-info">
+          <div class="work-title">Название проекта 3</div>
+          <div class="work-desc">Графический дизайн, айдентика, 2026</div>
+        </div>
+      </article>
 
-      <div class="package">
-        <h3>«Офис на 1–3 ПК»</h3>
-        <span class="price">от 8000 ₽</span>
-        <p>Настройка сети, общих папок, почты, антивирусов для небольшого офиса.</p>
-        <ul>
-          <li>Настройка Wi-Fi и локальной сети</li>
-          <li>Общие папки и принтеры</li>
-          <li>Почта и календари</li>
-          <li>Антивирус на каждый ПК</li>
-          <li>Краткое обучение сотрудников</li>
-        </ul>
-      </div>
-    </div>
+      <!-- Работа 4 -->
+      <article class="work">
+        <img src="https://via.placeholder.com/600x400/c0392b/ffffff?text=Работа+4" alt="Описание работы 4">
+        <div class="work-info">
+          <div class="work-title">Название проекта 4</div>
+          <div class="work-desc">Концепт-арт, 3D-скетч, 2026</div>
+        </div>
+      </article>
+    </section>
 
-    <div class="form-section">
-      <h2>Оставить заявку</h2>
-      <p class="subtitle">Работаю по всей России, выезды по Казани. Заполните форму — отвечу на почту в течение 2 часов.</p>
+    <!-- О себе -->
+    <section class="about">
+      <p>Я создаю визуальные истории: иллюстрации, дизайн, фото. Люблю чистые формы, выразительную композицию и внимание к деталям.</p>
+      <p>Открыт к проектам: коммерческие заказы, коллаборации, выставки.</p>
+    </section>
 
-      <form id="my-form" action="https://formspree.io/f/xkjnyvqa" method="POST">
-        <label for="name">Имя</label>
-        <input type="text" id="name" name="name" required placeholder="Как к вам обращаться">
-
-        <label for="email">Почта</label>
-        <input type="email" id="email" name="email" required placeholder="example@yandex.ru">
-
-        <label for="city">Город</label>
-        <input type="text" id="city" name="city" required placeholder="Казань, Москва и т.д.">
-
-        <label for="problem">Что не работает</label>
-        <textarea id="problem" name="problem" required placeholder="Ноутбук не включается, Windows не ставится, ПК тормозит..."></textarea>
-
-        <label for="model">Модель устройства</label>
-        <input type="text" id="model" name="model" placeholder="HP Pavilion, ASUS, Lenovo и т.п.">
-
+    <!-- Форма заявки -->
+    <section class="contact-section">
+      <h2>Заказать проект</h2>
+      <form id="creative-form" action="https://formspree.io/f/xkjnyvqa" method="POST">
+        <div class="form-group">
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" name="name" required placeholder="Как к вам обращаться">
+        </div>
+        <div class="form-group">
+          <label for="email">Почта</label>
+          <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+        </div>
+        <div class="form-group">
+          <label for="type">Тип проекта</label>
+          <select id="type" name="type" required>
+            <option value="" disabled selected>Выберите тип</option>
+            <option value="иллюстрация">Иллюстрация</option>
+            <option value="дизайн">Дизайн / айдентика</option>
+            <option value="фото">Фотосъёмка</option>
+            <option value="3d">3D / концепт-арт</option>
+            <option value="другое">Другое</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="budget">Бюджет / ориентир (если есть)</label>
+          <input type="text" id="budget" name="budget" placeholder="Например: до 15 000 ₽, без ограничений">
+        </div>
+        <div class="form-group">
+          <label for="message">Расскажите о задаче</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Что нужно сделать, сроки, референсы"></textarea>
+        </div>
         <button type="submit">Отправить заявку</button>
       </form>
+    </section>
 
-      <div class="success-msg" id="success-msg">
-        Заявка отправлена! Отвечу на почту в течение 2 часов.
-      </div>
-    </div>
-
-    <div class="contacts">
-      <p><strong>ИП Хайрутдинов А.Т.</strong></p>
-      <p>ОКВЭД 62.01, 62.09 · УСН 6%</p>
-      <p>Почта: <a href="mailto:Aidar443@yandex.ru">Aidar443@yandex.ru</a></p>
-      <p style="margin-top: 10px; font-size: 12px; color: #666;">Работаю по всей России удалённо, выезды — по Казани</p>
-    </div>
-
-    <div class="footer">
-      <p>© 2026 Айдар — ИТ-мастер</p>
-    </div>
-
+    <footer>
+      &copy; 2026 Имя Фамилия. Все права защищены.
+    </footer>
   </div>
 
+  <!-- AJAX для формы -->
   <script>
-    const form = document.getElementById('my-form');
-    const successMsg = document.getElementById('success-msg');
-
+    const form = document.getElementById('creative-form');
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
       const data = new FormData(form);
@@ -145,13 +210,12 @@
           headers: { 'Accept': 'application/json' }
         });
         if (response.ok) {
-          form.style.display = 'none';
-          successMsg.style.display = 'block';
+          form.innerHTML = '<h2 style="text-align:center">Спасибо! Заявка отправлена.</h2><p style="text-align:center;color:#666">Я свяжусь с вами в ближайшее время.</p>';
         } else {
-          alert('Что-то пошло не так. Попробуйте ещё раз или напишите на Aidar443@yandex.ru');
+          alert('Что-то пошло не так. Напишите на почту напрямую.');
         }
       } catch (error) {
-        alert('Ошибка отправки. Напишите на почту: Aidar443@yandex.ru');
+        alert('Ошибка отправки. Попробуйте позже или напишите на почту.');
       }
     });
   </script>
