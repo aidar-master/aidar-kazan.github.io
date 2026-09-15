@@ -11,32 +11,22 @@
       --bg: #F9FAFB;
       --white: #FFFFFF;
       --text: #333;
-      --gray: #9CA3AF;
     }
     body {
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
+      margin: 0; padding: 0;
+      background: var(--bg); color: var(--text); line-height: 1.6;
     }
     header {
-      background-color: var(--primary);
-      color: var(--white);
-      padding: 2.5rem 1rem;
-      text-align: center;
+      background-color: var(--primary); color: var(--white);
+      padding: 2.5rem 1rem; text-align: center;
     }
     h1 { margin: 0 0 0.5rem 0; font-size: 2.4rem; }
     p.subtitle { margin: 0; opacity: 0.95; font-size: 1.15rem; }
     main { max-width: 960px; margin: 2rem auto; padding: 0 1rem; }
     .section-title {
-      color: var(--primary);
-      border-bottom: 3px solid var(--accent);
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-bottom: 1.8rem;
-      font-size: 1.5rem;
+      color: var(--primary); border-bottom: 3px solid var(--accent);
+      display: inline-block; padding-bottom: 8px; margin-bottom: 1.8rem; font-size: 1.5rem;
     }
     .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; }
     .card {
@@ -44,41 +34,48 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s;
     }
     .card:hover { transform: translateY(-4px); }
-    
-    /* Генератор ТЗ */
     .form-group { margin-bottom: 0.8rem; }
     label { display: block; margin-bottom: 0.4rem; font-weight: 500; }
-    input[type="text"], select { width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 6px; }
-    #generated-task { margin-top: 1rem; padding: 1rem; background: #f3f4f6; border-radius: 6px; white-space: pre-wrap; display: none; }
-
-    /* Калькулятор окупаемости */
-    .calc-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
-    .calc-input { flex: 1; min-width: 180px; padding: 0.6rem; border: 1px solid #ddd; border-radius: 6px; }
-    #savings-result { margin-top: 1rem; padding: 1rem; background: rgba(59,130,206,0.1); border-radius: 6px; display: none; color: var(--primary); font-weight: 600; }
-
-    /* Квиз */
-    .quiz-step { display: none; animation: fadeIn 0.3s; }
-    .quiz-step.active { display: block; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: translateY(0); } }
-    .recommendation { margin-top: 1.5rem; padding: 1.2rem; background: var(--accent); color: var(--white); border-radius: 8px; text-align: center; }
-
-    /* Таймлайн */
-    .timeline { position: relative; padding-left: 24px; border-left: 1px dashed #ccc; }
-    .step { margin-bottom: 1.2rem; position: relative; }
-    .step::before {
-      content: ""; position: absolute; left: -18px; top: 4px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%;
+    input[type="text"], input[type="number"], select {
+      width: 100%; padding: 0.6rem; border: 1px solid #ddd; border-radius: 6px;
+      box-sizing: border-box; font-size: 1rem;
     }
-
-    /* Кнопки */
+    #generated-task {
+      margin-top: 1rem; padding: 1rem; background: #f3f4f6;
+      border-radius: 6px; white-space: pre-wrap; display: none;
+    }
+    .calc-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.8rem; }
+    .calc-input { flex: 1; min-width: 180px; }
+    #savings-result {
+      margin-top: 1rem; padding: 1rem; background: rgba(59,130,206,0.1);
+      border-radius: 6px; display: none; color: var(--primary); font-weight: 600;
+    }
+    .quiz-step { display: none; }
+    .quiz-step.active { display: block; }
+    .quiz-btn { margin: 0.4rem 0.2rem; }
+    .recommendation {
+      margin-top: 1.5rem; padding: 1.2rem; background: var(--accent); color: var(--white);
+      border-radius: 8px; text-align: center; display: none;
+    }
+    .timeline { padding-left: 24px; border-left: 1px dashed #ccc; }
+    .step-item { margin-bottom: 1.2rem; position: relative; }
+    .step-item::before {
+      content: ""; position: absolute; left: -18px; top: 4px; width: 8px; height: 8px;
+      background: var(--accent); border-radius: 50%;
+    }
     .btn {
       display: inline-block; background: var(--accent); color: var(--white);
-      padding: 0.9rem 1.6rem; border-radius: 8px; text-decoration: none;
-      font-weight: 600; transition: background 0.25s, transform 0.25s;
+      padding: 0.8rem 1.4rem; border-radius: 8px; text-decoration: none;
+      font-weight: 600; border: none; cursor: pointer; font-size: 1rem;
+      transition: background 0.25s, transform 0.25s; margin: 0.3rem;
     }
     .btn:hover { background: #2b6cb0; transform: scale(1.03); }
-    .btn-outline { background: transparent; border: 1px solid var(--primary); color: var(--primary); }
+    .btn-outline {
+      background: transparent; border: 1px solid var(--primary); color: var(--primary);
+    }
     .btn-outline:hover { background: var(--primary); color: var(--white); }
-
+    .copy-btn { background: #10B981; }
+    .copy-btn:hover { background: #059669; }
     footer {
       text-align: center; padding: 3rem 1rem; color: #666; font-size: 0.9rem;
       border-top: 1px solid #e5e7eb;
@@ -93,7 +90,6 @@
   </header>
 
   <main>
-    <!-- Услуги -->
     <section>
       <h2 class="section-title">Что я делаю</h2>
       <div class="grid-3">
@@ -112,107 +108,97 @@
       </div>
     </section>
 
-    <!-- Генератор ТЗ -->
     <section style="margin-top: 2.5rem;">
       <h2 class="section-title">Сформируйте ТЗ за 30 секунд</h2>
       <div style="max-width: 600px; margin: 0 auto;">
         <div class="form-group">
           <label>Тип задачи</label>
           <select id="task-type">
-            <option value="калькулятор">Простой калькулятор (HTML+JS)</option>
-            <option value="лендинг">Мини‑лендинг / витрина</option>
-            <option value="форма">Форма заявок + интеграция</option>
-            <option value="автоматизация">Автоматизация расчётов</option>
+            <option value="Простой калькулятор (HTML+JS)">Простой калькулятор (HTML+JS)</option>
+            <option value="Мини‑лендинг / витрина">Мини‑лендинг / витрина</option>
+            <option value="Форма заявок + интеграция">Форма заявок + интеграция</option>
+            <option value="Автоматизация расчётов">Автоматизация расчётов</option>
           </select>
         </div>
         <div class="form-group">
           <label>Срок</label>
           <select id="deadline">
-            <option value="срочно">Срочно (1 рабочий день)</option>
-            <option value="3дня">3 рабочих дня</option>
-            <option value="неделя">До недели</option>
+            <option value="Срочно (1 рабочий день)">Срочно (1 рабочий день)</option>
+            <option value="3 рабочих дня">3 рабочих дня</option>
+            <option value="До недели">До недели</option>
           </select>
         </div>
         <div class="form-group">
           <label>Бюджет (ориентир)</label>
-          <input type="text" id="budget" placeholder="Например: до 15 000 ₽">
+          <input type="text" id="budget" placeholder="Например: до 15 000 ₽">
         </div>
-        <button type="button" onclick="generateTask()" class="btn">Сгенерировать ТЗ</button>
+        <button type="button" class="btn" onclick="generateTask()">Сгенерировать ТЗ</button>
         <div id="generated-task"></div>
       </div>
     </section>
 
-    <!-- Калькулятор окупаемости -->
     <section style="margin-top: 2.5rem;">
       <h2 class="section-title">Сколько вы теряете на рутине</h2>
       <div style="max-width: 600px; margin: 0 auto;">
         <div class="calc-row">
-          <div>
+          <div style="flex:1;min-width:180px;">
             <label>Заявок в месяц</label>
             <input type="number" id="leads-per-month" class="calc-input" value="100">
           </div>
-          <div>
+          <div style="flex:1;min-width:180px;">
             <label>Минут на расчёт вручную</label>
             <input type="number" id="minutes-per-calc" class="calc-input" value="10">
           </div>
         </div>
         <div class="calc-row">
-          <div>
+          <div style="flex:1;min-width:180px;">
             <label>Ставка в час (₽)</label>
             <input type="number" id="hourly-rate" class="calc-input" value="300">
           </div>
         </div>
-        <button type="button" onclick="calculateSavings()" class="btn btn-outline">Посчитать экономию</button>
+        <button type="button" class="btn btn-outline" onclick="calculateSavings()">Посчитать экономию</button>
         <div id="savings-result"></div>
       </div>
     </section>
 
-    <!-- Мини‑квиз -->
     <section style="margin-top: 2.5rem;">
       <h2 class="section-title">Тест: какой вариант подойдёт вам</h2>
-      <div id="quiz">
-        <div class="quiz-step active">
-          <h3>Шаг 1/4</h3>
+      <div id="quiz" style="max-width: 600px; margin: 0 auto;">
+        <div class="quiz-step active" id="quiz-step-0">
+          <h3>Шаг 1 из 4</h3>
           <p>Вы хотите разовое решение или чтобы работало каждый день?</p>
-          <button onclick="quizAnswer('разовое')" class="btn">Разовое (сделали и забыли)</button>
-          <button onclick="quizAnswer('ежедневно')" class="btn">Ежедневно (чтобы работало постоянно)</button>
+          <button class="btn quiz-btn" onclick="quizAnswer(0,'разовое')">Разовое (сделали и забыли)</button>
+          <button class="btn quiz-btn" onclick="quizAnswer(0,'ежедневно')">Ежедневно (работает постоянно)</button>
         </div>
-        <div class="quiz-step">
-          <h3>Шаг 2/4</h3>
+        <div class="quiz-step" id="quiz-step-1">
+          <h3>Шаг 2 из 4</h3>
           <p>Важно, чтобы вы могли править сами, или пусть делает мастер?</p>
-          <button onclick="quizAnswer('сам')" class="btn">Хочу сам править (простой шаблон)</button>
-          <button onclick="quizAnswer('мастер')" class="btn">Пусть делает мастер (кастомный)</button>
+          <button class="btn quiz-btn" onclick="quizAnswer(1,'сам')">Хочу сам править</button>
+          <button class="btn quiz-btn" onclick="quizAnswer(1,'мастер')">Пусть делает мастер</button>
         </div>
-        <div class="quiz-step">
-          <h3>Шаг 3/4</h3>
+        <div class="quiz-step" id="quiz-step-2">
+          <h3>Шаг 3 из 4</h3>
           <p>Готовы платить за доработки, или «сделали и забыли»?</p>
-          <button onclick="quizAnswer('доработки')" class="btn">Да, готов к доработкам</button>
-          <button onclick="quizAnswer('бездоработок')" class="btn">Без доработок, сразу финальный вариант</button>
+          <button class="btn quiz-btn" onclick="quizAnswer(2,'доработки')">Да, готов к доработкам</button>
+          <button class="btn quiz-btn" onclick="quizAnswer(2,'бездоработок')">Без доработок, сразу финал</button>
         </div>
-        <div class="quiz-step">
-          <h3>Шаг 4/4</h3>
+        <div class="quiz-step" id="quiz-step-3">
+          <h3>Шаг 4 из 4</h3>
           <p>Какой бюджет ближе?</p>
-          <button onclick="quizAnswer('до5')" class="btn">До 5 000 ₽</button>
-          <button onclick="quizAnswer('до15')" class="btn">До 15 000 ₽</button>
-          <button onclick="quizAnswer('любой')" class="btn">Любой, главное — результат</button>
+          <button class="btn quiz-btn" onclick="quizAnswer(3,'до5')">До 5 000 ₽</button>
+          <button class="btn quiz-btn" onclick="quizAnswer(3,'до15')">До 15 000 ₽</button>
+          <button class="btn quiz-btn" onclick="quizAnswer(3,'любой')">Любой, главное — результат</button>
         </div>
-        <div id="quiz-result" class="recommendation" style="display:none;"></div>
+        <div class="recommendation" id="quiz-result"></div>
       </div>
     </section>
 
-    <!-- Процесс работы -->
     <section style="margin-top: 2.5rem;">
       <h2 class="section-title">Как я работаю (прозрачно)</h2>
       <div class="timeline">
-        <div class="step">
-          <strong>День 1</strong>: Обсуждаем задачу, фиксируем сроки, предоплата 50%.
-        </div>
-        <div class="step">
-          <strong>День 2</strong>: Прототип/черновик, согласование правок.
-        </div>
-        <div class="step">
-          <strong>День 3</strong>: Финальная версия, чек ККТ, передача кода и инструкции.
-        </div>
+        <div class="step-item"><strong>День 1</strong>: Обсуждаем задачу, фиксируем сроки, предоплата 50%.</div>
+        <div class="step-item"><strong>День 2</strong>: Прототип/черновик, согласование правок.</div>
+        <div class="step-item"><strong>День 3</strong>: Финальная версия, чек ККТ, передача кода и инструкции.</div>
       </div>
       <p style="margin-top: 1.5rem;">Чек‑лист для клиента (что подготовить перед стартом):</p>
       <ul style="margin-left: 24px;">
@@ -221,10 +207,9 @@
         <li>Список полей для расчёта (если калькулятор)</li>
         <li>Предпочитаемые цвета/стиль (если лендинг)</li>
       </ul>
-      <button type="button" onclick="downloadChecklist()" class="btn btn-outline" style="margin-top: 1rem;">Скачать чек‑лист (TXT)</button>
+      <button type="button" class="btn btn-outline" onclick="downloadChecklist()" style="margin-top: 1rem;">Скачать чек‑лист (TXT)</button>
     </section>
 
-    <!-- Кейсы и заказ -->
     <section style="margin-top: 3rem; text-align: center;">
       <h2 class="section-title">Кейсы</h2>
       <div style="max-width: 700px; margin: 1.5rem auto;">
@@ -248,25 +233,116 @@
   </footer>
 
   <script>
-    // Генератор ТЗ
+    // === ГЕНЕРАТОР ТЗ ===
     function generateTask() {
-      const type = document.getElementById('task-type').value;
-      const deadline = document.getElementById('deadline').value;
-      const budget = document.getElementById('budget').value;
+      var type = document.getElementById('task-type').value;
+      var deadline = document.getElementById('deadline').value;
+      var budget = document.getElementById('budget').value || 'не указан';
 
-      const taskText = `Задача: ${type}.\nСрок: ${deadline}.\nБюджет: ${budget}.\nРезультат: ссылка на GitHub Pages + архив с кодом.\nДополнительно: чек ККТ по факту оплаты.`;
+      var taskText = 'Задача: ' + type + '.\n' +
+                     'Срок: ' + deadline + '.\n' +
+                     'Бюджет: ' + budget + '.\n' +
+                     'Результат: ссылка на GitHub Pages + архив с кодом.\n' +
+                     'Дополнительно: чек ККТ по факту оплаты.';
 
-      document.getElementById('generated-task').textContent = taskText;
-      document.getElementById('generated-task').style.display = 'block';
+      var el = document.getElementById('generated-task');
+      el.textContent = taskText;
+      el.style.display = 'block';
+
+      var oldBtn = document.getElementById('copy-btn');
+      if (oldBtn) oldBtn.remove();
+
+      var copyBtn = document.createElement('button');
+      copyBtn.id = 'copy-btn';
+      copyBtn.className = 'btn copy-btn';
+      copyBtn.textContent = 'Скопировать ТЗ';
+      copyBtn.onclick = function() {
+        navigator.clipboard.writeText(taskText).then(function() {
+          copyBtn.textContent = 'Скопировано!';
+          setTimeout(function() { copyBtn.textContent = 'Скопировать ТЗ'; }, 2000);
+        });
+      };
+      el.parentNode.insertBefore(copyBtn, el.nextSibling);
     }
 
-    // Калькулятор окупаемости
+    // === КАЛЬКУЛЯТОР ОКУПАЕМОСТИ ===
     function calculateSavings() {
-      const leads = parseInt(document.getElementById('leads-per-month').value) || 100;
-      const minutes = parseInt(document.getElementById('minutes-per-calc').value) || 10;
-      const rate = parseInt(document.getElementById('hourly-rate').value) || 300;
+      var leads = parseInt(document.getElementById('leads-per-month').value) || 0;
+      var minutes = parseInt(document.getElementById('minutes-per-calc').value) || 0;
+      var rate = parseInt(document.getElementById('hourly-rate').value) || 0;
 
-      const hoursPerMonth = (leads * minutes) / 60;
-      const moneyLost = hoursPerMonth * rate;
+      var hoursPerMonth = (leads * minutes) / 60;
+      var moneyLost = Math.round(hoursPerMonth * rate);
 
-      const result = `При текущих объёмах вы теряете примерно ${moneyLost.toLocaleString()} ₽ в месяц на рутине.\nПростой инструмент окупается за 1–2 месяца
+      var el = document.getElementById('savings-result');
+      el.innerHTML = 'При текущих объёмах вы тратите ~' + hoursPerMonth.toFixed(0) + ' часов в месяц на рутину.<br>' +
+                      'Это примерно ' + moneyLost.toLocaleString('ru-RU') + ' ₽ в месяц.<br>' +
+                      'Простой инструмент (от 3 000 ₽) окупается за ' + Math.max(1, Math.ceil(3000 / Math.max(moneyLost, 1))) + ' месяц(ев).<br>' +
+                      'После этого — экономия каждый месяц.';
+      el.style.display = 'block';
+    }
+
+    // === КВИЗ ===
+    var quizAnswers = [];
+    var quizStep = 0;
+
+    function quizAnswer(step, value) {
+      quizAnswers[step] = value;
+      document.getElementById('quiz-step-' + step).classList.remove('active');
+
+      if (step < 3) {
+        quizStep = step + 1;
+        document.getElementById('quiz-step-' + quizStep).classList.add('active');
+      } else {
+        showQuizResult();
+      }
+    }
+
+    function showQuizResult() {
+      var result = document.getElementById('quiz-result');
+      var a = quizAnswers;
+
+      var variant = '';
+      var desc = '';
+
+      if (a[2] === 'бездоработок' && (a[3] === 'до5' || a[3] === 'до15')) {
+        variant = 'Вариант А: Готовый шаблон (от 3 000 ₽)';
+        desc = 'Простой калькулятор на GitHub Pages, без доработок. Быстро, дёшево, работает сразу.';
+      } else if (a[1] === 'сам' && a[3] === 'до5') {
+        variant = 'Вариант А: Готовый шаблон (от 3 000 ₽)';
+        desc = 'Вы сможете править сами, документация и инструкция включены.';
+      } else if (a[0] === 'ежедневно' || a[1] === 'мастер') {
+        variant = 'Вариант Б: Кастомный инструмент (от 8 000 ₽)';
+        desc = 'Под вашу задачу, с поддержкой и правками. Срок 2–3 дня.';
+      } else {
+        variant = 'Вариант В: Полная автоматизация (от 15 000 ₽)';
+        desc = 'Кастомная разработка под ваши процессы, интеграции, долгосрочная поддержка.';
+      }
+
+      result.innerHTML = '<strong>' + variant + '</strong><br>' + desc + '<br><br>' +
+                         'Напишите мне — обсудим детали: <a href="mailto:Aidar443@yandex.ru" style="color:#fff;text-decoration:underline;">Aidar443@yandex.ru</a>';
+      result.style.display = 'block';
+    }
+
+    // === СКАЧАТЬ ЧЕК‑ЛИСТ ===
+    function downloadChecklist() {
+      var text = 'Чек‑лист для заказа ИТ‑услуги\n' +
+                 '=========================================\n\n' +
+                 '1. Ссылка на сайт/маркетплейс (если есть)\n' +
+                 '2. Примеры, которые нравятся (скриншоты, ссылки)\n' +
+                 '3. Список полей для расчёта (если калькулятор)\n' +
+                 '4. Предпочитаемые цвета/стиль (если лендинг)\n' +
+                 '5. Срок: когда нужен результат\n' +
+                 '6. Бюджет: ориентир или точная сумма\n\n' +
+                 'Контакт: Aidar443@yandex.ru\n' +
+                 'ИП Хайрутдинов А. Т. • ИНН 166106277773';
+
+      var blob = new Blob([text], {type: 'text/plain;charset=utf-8'});
+      var link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'checklist.txt';
+      link.click();
+    }
+  </script>
+</body>
+</html>
