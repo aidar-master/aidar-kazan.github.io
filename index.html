@@ -6,9 +6,9 @@
   <title>ИТ‑услуги | Айдар Хайрутдинов, ИП</title>
   <style>
     :root {
-      --primary: #2B3A50;       /* тёмно‑синий */
-      --accent: #3B82CE;       /* яркий синий для кнопок */
-      --bg: #F9FAFB;           /* светло‑серый фон страницы */
+      --primary: #2B3A50;
+      --accent: #3B82CE;
+      --bg: #F9FAFB;
       --white: #FFFFFF;
       --text: #333;
     }
@@ -25,19 +25,19 @@
     header {
       background-color: var(--primary);
       color: var(--white);
-      padding: 2rem 1rem;
+      padding: 2.5rem 1rem;
       text-align: center;
     }
 
     h1 {
       margin: 0 0 0.5rem 0;
-      font-size: 2.2rem;
+      font-size: 2.4rem;
     }
 
     p.subtitle {
       margin: 0;
-      opacity: 0.9;
-      font-size: 1.1rem;
+      opacity: 0.95;
+      font-size: 1.15rem;
     }
 
     main {
@@ -48,23 +48,43 @@
 
     .section-title {
       color: var(--primary);
-      border-bottom: 2px solid var(--accent);
+      border-bottom: 3px solid var(--accent);
       display: inline-block;
-      padding-bottom: 6px;
-      margin-bottom: 1.5rem;
+      padding-bottom: 8px;
+      margin-bottom: 1.8rem;
+      font-size: 1.5rem;
     }
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      gap: 1.8rem;
     }
 
     .card {
       background: var(--white);
-      padding: 1.5rem;
+      padding: 1.7rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .benefit-item {
+      background: rgba(59, 130, 206, 0.06);
+      padding: 1rem;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      color: #333;
     }
 
     .cases-list {
@@ -74,32 +94,36 @@
 
     .cases-list li {
       background: var(--white);
-      margin-bottom: 1rem;
-      padding: 1.2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 1.2rem;
+      padding: 1.4rem;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+      border-left: 5px solid var(--accent);
     }
 
     .btn {
       display: inline-block;
       background: var(--accent);
       color: var(--white);
-      padding: 0.8rem 1.4rem;
-      border-radius: 6px;
+      padding: 0.9rem 1.6rem;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      transition: background 0.2s;
+      font-size: 1.05rem;
+      transition: background 0.25s, transform 0.25s;
     }
 
     .btn:hover {
       background: #2b6cb0;
+      transform: scale(1.03);
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 3rem 1rem;
       color: #666;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      border-top: 1px solid #e5e7eb;
     }
   </style>
 </head>
@@ -107,7 +131,7 @@
 
   <header>
     <h1>Айдар Хайрутдинов</h1>
-    <p class="subtitle">ИТ‑услуги и разработка простых инструментов • ИП, УСН, работаю по всей России</p>
+    <p class="subtitle">ИТ‑услуги и разработка простых инструментов • ИП, УСН 6%, работаю по всей России</p>
   </header>
 
   <main>
@@ -129,7 +153,17 @@
       </div>
     </section>
 
-    <section style="margin-top: 3rem;">
+    <section style="margin-top: 2.5rem;">
+      <h2 class="section-title">Почему удобно работать удалённо</h2>
+      <div class="benefits-grid">
+        <div class="benefit-item">✅ Результат сразу ссылкой — калькулятор или страница на GitHub Pages</div>
+        <div class="benefit-item">✅ Официально: ИП, чек ККТ, договор/счёт по запросу</div>
+        <div class="benefit-item">✅ Работаю по всей России — не нужно никуда ехать</div>
+        <div class="benefit-item">✅ Поддержка после сдачи: 1 круг правок включён</div>
+      </div>
+    </section>
+
+    <section style="margin-top: 2.5rem;">
       <h2 class="section-title">Кейсы</h2>
       <ul class="cases-list">
         <li>
@@ -151,7 +185,7 @@
   </main>
 
   <footer>
-    ИП Хайрутдинов А. Т. • ИНН: [вставь свой ИНН] • Работаю официально, выдаю чеки ККТ
+    ИП Хайрутдинов А. Т. • ИНН 166106277773 • ОГРНИП 325169000071815 • УСН 6% • Работаю официально, выдаю кассовые чеки по 54‑ФЗ
   </footer>
 
 </body>
