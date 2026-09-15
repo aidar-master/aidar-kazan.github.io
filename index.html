@@ -1,204 +1,188 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ИТ‑услуги и калькуляторы для бизнеса — ИП Хайрутдинов А.Т.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Айдар — ИТ-мастер | Установка Windows, ремонт ПК, настройка касс</title>
+  <meta name="description" content="ИТ-услуги по всей России: установка Windows, чистка ноутбуков, настройка касс и ОФД. Выезды по Казани. ИП Хайрутдинов А.Т., ОКВЭД 62.01, 62.09.">
   <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #1e293b;
-      --gray: #64748b;
-      --accent: #10b981;
-    }
-    * { box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; background-color: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
-    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; color: #2c3e50; background: #f0f2f5; line-height: 1.6; }
+    .container { max-width: 600px; margin: 0 auto; padding: 20px; }
 
-    /* Header */
-    header { padding: 40px 0; border-bottom: 1px solid #e2e8f0; }
-    h1 { margin: 0 0 8px 0; font-size: 28px; color: var(--primary-dark); }
-    p.subtitle { margin: 0; color: var(--gray); font-size: 18px; }
-    .tagline { margin-top: 12px; font-weight: 600; color: var(--primary); }
+    /* Шапка */
+    .header { text-align: center; padding: 40px 20px 30px; background: #1a1a2e; color: #fff; border-radius: 0 0 20px 20px; }
+    .header h1 { font-size: 28px; margin-bottom: 8px; }
+    .header p { font-size: 15px; color: #aaa; }
+    .header .badge { display: inline-block; margin-top: 10px; padding: 4px 12px; background: #007bff; border-radius: 20px; font-size: 13px; }
 
-    /* Sections */
-    section { padding: 40px 0; }
-    h2 { font-size: 24px; margin-bottom: 20px; color: var(--primary-dark); border-left: 5px solid var(--primary); padding-left: 16px; }
+    /* Пакеты */
+    .packages { margin: 30px 0; }
+    .packages h2 { text-align: center; margin-bottom: 20px; font-size: 22px; }
+    .package { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    .package h3 { font-size: 18px; color: #1a1a2e; margin-bottom: 8px; }
+    .package .price { font-size: 22px; font-weight: bold; color: #007bff; }
+    .package p { color: #555; font-size: 14px; margin-top: 6px; }
+    .package ul { margin-top: 10px; padding-left: 20px; color: #555; font-size: 14px; }
+    .package li { margin-bottom: 4px; }
 
-    /* Grid */
-    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-    .card { background: var(--card); padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-    .card h3 { margin: 0 0 12px 0; color: var(--primary-dark); }
-    .price { font-weight: bold; color: var(--primary); font-size: 18px; margin-bottom: 12px; }
-    .desc { color: var(--gray); font-size: 14px; }
+    /* Калькулятор */
+    .calc-box { text-align: center; background: #eef4ff; border-left: 5px solid #007bff; border-radius: 8px; padding: 20px; margin: 30px 0; }
+    .calc-box h3 { margin-bottom: 10px; font-size: 18px; }
+    .calc-box p { color: #555; font-size: 14px; margin-bottom: 12px; }
+    .calc-box a { display: inline-block; padding: 10px 24px; background: #007bff; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; }
+    .calc-box a:hover { background: #0056b3; }
 
-    /* Reviews note */
-    .reviews-note { background: #eff6ff; border-left: 5px solid var(--primary); padding: 20px; border-radius: 8px; margin: 32px 0; }
-    .reviews-note h3 { margin: 0 0 12px 0; color: var(--primary-dark); }
+    /* Форма */
+    .form-section { background: #fff; border-radius: 12px; padding: 28px; margin: 30px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
+    .form-section h2 { font-size: 20px; margin-bottom: 6px; color: #1a1a2e; }
+    .form-section .subtitle { color: #666; font-size: 14px; margin-bottom: 20px; }
+    .form-section label { display: block; font-weight: bold; color: #333; margin-bottom: 4px; font-size: 14px; }
+    .form-section input, .form-section textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; margin-bottom: 14px; font-family: Arial, sans-serif; }
+    .form-section input:focus, .form-section textarea:focus { border-color: #007bff; outline: none; }
+    .form-section button { width: 100%; padding: 14px; background: #007bff; color: #fff; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; }
+    .form-section button:hover { background: #0056b3; }
+    .form-section .success-msg { display: none; text-align: center; padding: 20px; background: #d4edda; color: #155724; border-radius: 8px; margin-top: 15px; font-size: 16px; }
 
-    /* Demo block */
-    .demo-block { background: #ffffff; padding: 30px; border: 1px dashed #cbd5e1; border-radius: 12px; text-align: center; }
-    .demo-block h3 { color: var(--primary-dark); margin-bottom: 12px; }
+    /* Контакты */
+    .contacts { text-align: center; padding: 20px; background: #1a1a2e; color: #aaa; border-radius: 12px; margin: 30px 0; font-size: 14px; }
+    .contacts a { color: #4da3ff; text-decoration: none; }
+    .contacts a:hover { text-decoration: underline; }
 
-    /* Formspree form */
-    .form-block { max-width: 500px; margin: 0 auto; background: var(--card); padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-    .form-group { margin-bottom: 16px; }
-    .form-group label { display: block; margin-bottom: 6px; color: var(--text); font-weight: 500; }
-    .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 15px; }
-    button[type="submit"] { background: var(--primary); color: white; padding: 12px 24px; border: none; border-radius: 6px; font-weight: 600; cursor: pointer; transition: background 0.2s; }
-    button[type="submit"]:hover { background: var(--primary-dark); }
-
-    /* CTA */
-    .cta-block { background: var(--primary); color: white; padding: 40px; text-align: center; border-radius: 16px; margin: 40px 0; }
-    .cta-block h2 { color: white; margin: 0 0 16px 0; }
-    .btn { display: inline-block; background: white; color: var(--primary-dark); padding: 14px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: background 0.2s; }
-    .btn:hover { background: #e2e8f0; }
-
-    /* Footer */
-    footer { padding: 40px 0; color: var(--gray); border-top: 1px solid #e2e8f0; text-align: center; font-size: 14px; }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 24px; }
-      .grid-3 { grid-template-columns: 1fr; }
-    }
+    /* Футер */
+    .footer { text-align: center; padding: 20px; color: #888; font-size: 12px; }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>ИП Хайрутдинов А.Т. — ИТ‑услуги и автоматизация для бизнеса</h1>
-      <p class="subtitle">Официальные ИТ‑услуги в Казани. Работаю лично, без посредников.</p>
-      <div class="tagline">Установка Windows, настройка ПК, разработка бизнес‑калькуляторов без Excel.</div>
-    </header>
 
-    <section>
-      <h2>Установка и настройка ПК — от 1 000 ₽</h2>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Установка Windows</h3>
-          <div class="price">от 1 000 ₽</div>
-          <p class="desc">Чистая система без лишнего мусора, драйверы и базовая настройка.</p>
-        </div>
-        <div class="card">
-          <h3>Переустановка Windows</h3>
-          <div class="price">от 1 000 ₽</div>
-          <p class="desc">С сохранением данных или полная очистка, проверка стабильности.</p>
-        </div>
-        <div class="card">
-          <h3>Антивирус и защита</h3>
-          <div class="price">от 1 000 ₽</div>
-          <p class="desc">Установка, настройка, удаление вирусов и баннеров.</p>
-        </div>
-        <div class="card">
-          <h3>Офисные программы</h3>
-          <div class="price">от 1 000 ₽</div>
-          <p class="desc">Office, архиваторы, просмотрщики, утилиты под задачи.</p>
-        </div>
-        <div class="card">
-          <h3>Драйверы и оптимизация</h3>
-          <div class="price">от 1 000 ₽</div>
-          <p class="desc">Стабильная работа системы, ускорение ПК, чистка автозагрузки.</p>
-        </div>
-        <div class="card">
-          <h3>Настройка нового ПК/ноутбука</h3>
-          <div class="price">от 1 000 ₽</div>
-          <p class="desc">Под ваши задачи: почта, браузеры, облачные диски, резервное копирование.</p>
-        </div>
+    <!-- Шапка -->
+    <div class="header">
+      <h1>Айдар — ИТ-мастер</h1>
+      <p>Установка Windows, ремонт ПК и ноутбуков, настройка касс и ОФД</p>
+      <span class="badge">Работаю по всей России · Выезды по Казани</span>
+    </div>
+
+    <!-- Пакеты услуг -->
+    <div class="packages">
+      <h2>Готовые пакеты — сразу понятно, сколько стоит</h2>
+
+      <div class="package">
+        <h3>«Быстрая чистка и диагностика»</h3>
+        <span class="price">1500 ₽</span>
+        <p>Чистка от пыли, замена термопасты, проверка SSD/HDD, базовая диагностика.</p>
+        <ul>
+          <li>Разборка и чистка системы охлаждения</li>
+          <li>Проверка температур и состояния дисков</li>
+          <li>Рекомендации по апгрейду</li>
+        </ul>
       </div>
-    </section>
 
-    <section class="reviews-note">
-      <h3>📋 Почему в отзывах — грузоперевозки?</h3>
-      <p>Долгое время успешно занимался грузоперевозками — клиенты ценили за надёжность и постоянную связь. Сейчас сменил сферу: оказываю профессиональные ИТ‑услуги. Ответственность и подход к делу остались прежними — репутация работает на меня!</p>
-    </section>
-
-    <section>
-      <h2>Онлайн‑калькуляторы для бизнеса — автоматизируем расчёты</h2>
-      <p style="color: var(--gray); margin-bottom: 20px;">Перестаньте считать вручную. Делаю понятные веб‑калькуляторы: вы вводите данные — система сама считает стоимость, маржу, прибыль. Без Excel и долгих ответов в чате.</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Калькулятор СТО</h3>
-          <div class="price">от 6 000 ₽</div>
-          <p class="desc">Окупаемость, маржа по работам и запчастям, налог УСН 6%.</p>
-        </div>
-        <div class="card">
-          <h3>Грузоперевозки + грузчики</h3>
-          <div class="price">от 6 000 ₽</div>
-          <p class="desc">Расчёт по зонам, тоннажу, этажам, минимальному времени.</p>
-        </div>
-        <div class="card">
-          <h3>ИТ‑услуги</h3>
-          <div class="price">от 6 000 ₽</div>
-          <p class="desc">Тарифы, надбавки, минимальный заказ, скидки — всё в одном инструменте.</p>
-        </div>
-        <div class="card">
-          <h3>Себестоимость и маржинальность</h3>
-          <div class="price">от 6 000 ₽</div>
-          <p class="desc">Плановая и фактическая стоимость, расчёт договорной цены.</p>
-        </div>
-        <div class="card">
-          <h3>Коммерческие предложения</h3>
-          <div class="price">от 6 000 ₽</div>
-          <p class="desc">Автоматический расчёт КП под клиента: объёмы, сроки, цена.</p>
-        </div>
-        <div class="card">
-          <h3>Реестр заявок и работ</h3>
-          <div class="price">от 6 000 ₽</div>
-          <p class="desc">Простой учёт заявок, статусов, выполненных работ и оплат.</p>
-        </div>
+      <div class="package">
+        <h3>«Установка Windows + софт»</h3>
+        <span class="price">3500 ₽</span>
+        <p>Чистая установка ОС, драйверов, базового софта и антивируса.</p>
+        <ul>
+          <li>Windows 10/11 на ваш выбор</li>
+          <li>Драйверы и обновления</li>
+          <li>Офис, браузер, антивирус, архиватор</li>
+          <li>Перенос данных со старой системы</li>
+        </ul>
       </div>
-    </section>
 
-    <section class="demo-block">
-      <h3>👉 Хотите посмотреть, как это выглядит вживую?</h3>
-      <p>Есть демо‑версии калькуляторов (вкладки, адаптив, логика расчёта). Напишите «демо» в форме ниже — пришлю ссылку на GitHub Pages, где можно пощёлкать все режимы.</p>
-    </section>
+      <div class="package">
+        <h3>«Офис на 1–3 ПК»</h3>
+        <span class="price">от 8000 ₽</span>
+        <p>Настройка сети, общих папок, почты, антивирусов для небольшого офиса.</p>
+        <ul>
+          <li>Настройка Wi-Fi и локальной сети</li>
+          <li>Общие папки и принтеры</li>
+          <li>Почта и календари</li>
+          <li>Антивирус на каждый ПК</li>
+          <li>Краткое обучение сотрудников</li>
+        </ul>
+      </div>
+    </div>
 
-    <section>
-      <h2>Форма заявки (Formspree)</h2>
-      <!-- Замени YOUR_FORM_SPREE_URL на свою ссылку из Formspree -->
-      <form action="https://formspree.io/f/YOUR_FORM_SPREE_URL" method="POST" class="form-block">
-        <div class="form-group">
-          <label for="name">Ваше имя</label>
-          <input type="text" id="name" name="name" required placeholder="Иван">
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="mail@example.com">
-        </div>
-        <div class="form-group">
-          <label for="service">Что интересует</label>
-          <select id="service" name="service" required>
-            <option value="">Выберите услугу</option>
-            <option value="установка windows">Установка Windows / настройка ПК</option>
-            <option value="калькулятор сто">Калькулятор СТО</option>
-            <option value="калькулятор грузоперевозки">Калькулятор грузоперевозки + грузчики</option>
-            <option value="калькулятор ит">Калькулятор ИТ‑услуг</option>
-            <option value="другое">Другое (опишите в комментарии)</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="comment">Комментарий / задача</label>
-          <textarea id="comment" name="comment" rows="4" placeholder="Например: нужен калькулятор СТО с учётом налога УСН 6%, маржи по работам и запчастям..."></textarea>
-        </div>
+    <!-- Калькулятор -->
+    <div class="calc-box">
+      <h3>Хочешь точный расчёт?</h3>
+      <p>Вбей объём работ — калькулятор сразу покажет цену и сроки.</p>
+      <!-- Замени ссылку на свой калькулятор -->
+      <a href="ССЫЛКА_НА_КАЛЬКУЛЯТОР">Открыть калькулятор</a>
+    </div>
+
+    <!-- Форма заявки -->
+    <div class="form-section">
+      <h2>Оставить заявку — перезвоню в течение 2 часов</h2>
+      <p class="subtitle">Работаю по всей России, выезды по Казани. Укажи город и проблему — так быстрее подберу решение.</p>
+
+      <form id="my-form" action="https://formspree.io/f/xkjnyvqa" method="POST">
+        <label for="name">Имя</label>
+        <input type="text" id="name" name="name" required placeholder="Как к вам обращаться">
+
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" required placeholder="+7 999 123-45-67">
+
+        <label for="city">Город</label>
+        <input type="text" id="city" name="city" required placeholder="Казань, Москва и т.д.">
+
+        <label for="problem">Что не работает</label>
+        <textarea id="problem" name="problem" required placeholder="Ноутбук не включается, касса не печатает, Windows не ставится..."></textarea>
+
+        <label for="model">Модель устройства</label>
+        <input type="text" id="model" name="model" placeholder="HP Pavilion, Эвотор, Штрих-М и т.п.">
+
+        <label for="time">Когда удобно перезвонить</label>
+        <input type="text" id="time" name="time" placeholder="После 18:00, в выходные, днём">
+
         <button type="submit">Отправить заявку</button>
       </form>
-    </section>
 
-    <section class="cta-block">
-      <h2>Консультация ни к чему не обязывает</h2>
-      <p style="margin-bottom: 20px; font-size: 16px;">Достаточно рассказать, что хотите получить — без сложных ТЗ. Перенесу ваши тарифы и правила в понятный интерфейс.</p>
-      <a href="mailto:Aidar443@yandex.ru" class="btn">Написать на почту</a>
-      <p style="margin-top: 16px; font-size: 13px; opacity: 0.8;">Или оставьте заявку в форме — пришлю демо‑версию и список 3–4 цифр, которые нужно прислать для адаптации.</p>
-    </section>
+      <div class="success-msg" id="success-msg">
+        Заявка отправлена! Перезвоню в течение 2 часов.
+      </div>
+    </div>
 
-    <footer>
-      <p>ИП Хайрутдинов А.Т. • Казань • Работаю по всей России удалённо</p>
-      <p>Официальный договор по запросу • УСН, все закрывающие документы</p>
-    </footer>
+    <!-- Контакты -->
+    <div class="contacts">
+      <p><strong>ИП Хайрутдинов А.Т.</strong></p>
+      <p>ОКВЭД 62.01, 62.09 · УСН 6%</p>
+      <p>Почта: <a href="mailto:Aidar443@yandex.ru">Aidar443@yandex.ru</a></p>
+      <p style="margin-top: 10px; font-size: 12px; color: #666;">Работаю по всей России удалённо, выезды — по Казани</p>
+    </div>
+
+    <!-- Футер -->
+    <div class="footer">
+      <p>© 2026 Айдар — ИТ-мастер</p>
+    </div>
+
   </div>
+
+  <!-- AJAX-отправка формы -->
+  <script>
+    const form = document.getElementById('my-form');
+    const successMsg = document.getElementById('success-msg');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      try {
+        const response = await fetch('https://formspree.io/f/xkjnyvqa', {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          alert('Что-то пошло не так. Попробуйте ещё раз или напишите на Aidar443@yandex.ru');
+        }
+      } catch (error) {
+        alert('Ошибка отправки. Напишите на почту: Aidar443@yandex.ru');
+      }
+    });
+  </script>
 </body>
 </html>
