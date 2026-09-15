@@ -3,20 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Айдар — ИТ-мастер | Установка Windows, ремонт ПК, настройка касс</title>
-  <meta name="description" content="ИТ-услуги по всей России: установка Windows, чистка ноутбуков, настройка касс и ОФД. Выезды по Казани. ИП Хайрутдинов А.Т., ОКВЭД 62.01, 62.09.">
+  <title>Айдар — ИТ-мастер | Установка Windows, ремонт ПК и ноутбуков</title>
+  <meta name="description" content="ИТ-услуги по всей России: установка Windows, чистка ноутбуков, настройка ПО. Выезды по Казани. ИП Хайрутдинов А.Т.">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: Arial, sans-serif; color: #2c3e50; background: #f0f2f5; line-height: 1.6; }
     .container { max-width: 600px; margin: 0 auto; padding: 20px; }
 
-    /* Шапка */
     .header { text-align: center; padding: 40px 20px 30px; background: #1a1a2e; color: #fff; border-radius: 0 0 20px 20px; }
     .header h1 { font-size: 28px; margin-bottom: 8px; }
     .header p { font-size: 15px; color: #aaa; }
     .header .badge { display: inline-block; margin-top: 10px; padding: 4px 12px; background: #007bff; border-radius: 20px; font-size: 13px; }
 
-    /* Пакеты */
     .packages { margin: 30px 0; }
     .packages h2 { text-align: center; margin-bottom: 20px; font-size: 22px; }
     .package { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
@@ -26,14 +24,6 @@
     .package ul { margin-top: 10px; padding-left: 20px; color: #555; font-size: 14px; }
     .package li { margin-bottom: 4px; }
 
-    /* Калькулятор */
-    .calc-box { text-align: center; background: #eef4ff; border-left: 5px solid #007bff; border-radius: 8px; padding: 20px; margin: 30px 0; }
-    .calc-box h3 { margin-bottom: 10px; font-size: 18px; }
-    .calc-box p { color: #555; font-size: 14px; margin-bottom: 12px; }
-    .calc-box a { display: inline-block; padding: 10px 24px; background: #007bff; color: #fff; text-decoration: none; border-radius: 6px; font-weight: bold; }
-    .calc-box a:hover { background: #0056b3; }
-
-    /* Форма */
     .form-section { background: #fff; border-radius: 12px; padding: 28px; margin: 30px 0; box-shadow: 0 2px 12px rgba(0,0,0,0.1); }
     .form-section h2 { font-size: 20px; margin-bottom: 6px; color: #1a1a2e; }
     .form-section .subtitle { color: #666; font-size: 14px; margin-bottom: 20px; }
@@ -44,26 +34,22 @@
     .form-section button:hover { background: #0056b3; }
     .form-section .success-msg { display: none; text-align: center; padding: 20px; background: #d4edda; color: #155724; border-radius: 8px; margin-top: 15px; font-size: 16px; }
 
-    /* Контакты */
     .contacts { text-align: center; padding: 20px; background: #1a1a2e; color: #aaa; border-radius: 12px; margin: 30px 0; font-size: 14px; }
     .contacts a { color: #4da3ff; text-decoration: none; }
     .contacts a:hover { text-decoration: underline; }
 
-    /* Футер */
     .footer { text-align: center; padding: 20px; color: #888; font-size: 12px; }
   </style>
 </head>
 <body>
   <div class="container">
 
-    <!-- Шапка -->
     <div class="header">
       <h1>Айдар — ИТ-мастер</h1>
-      <p>Установка Windows, ремонт ПК и ноутбуков, настройка касс и ОФД</p>
+      <p>Установка Windows, ремонт ПК и ноутбуков, настройка ПО</p>
       <span class="badge">Работаю по всей России · Выезды по Казани</span>
     </div>
 
-    <!-- Пакеты услуг -->
     <div class="packages">
       <h2>Готовые пакеты — сразу понятно, сколько стоит</h2>
 
@@ -104,47 +90,34 @@
       </div>
     </div>
 
-    <!-- Калькулятор -->
-    <div class="calc-box">
-      <h3>Хочешь точный расчёт?</h3>
-      <p>Вбей объём работ — калькулятор сразу покажет цену и сроки.</p>
-      <!-- Замени ссылку на свой калькулятор -->
-      <a href="ССЫЛКА_НА_КАЛЬКУЛЯТОР">Открыть калькулятор</a>
-    </div>
-
-    <!-- Форма заявки -->
     <div class="form-section">
-      <h2>Оставить заявку — перезвоню в течение 2 часов</h2>
-      <p class="subtitle">Работаю по всей России, выезды по Казани. Укажи город и проблему — так быстрее подберу решение.</p>
+      <h2>Оставить заявку</h2>
+      <p class="subtitle">Работаю по всей России, выезды по Казани. Заполните форму — отвечу на почту в течение 2 часов.</p>
 
       <form id="my-form" action="https://formspree.io/f/xkjnyvqa" method="POST">
         <label for="name">Имя</label>
         <input type="text" id="name" name="name" required placeholder="Как к вам обращаться">
 
-        <label for="phone">Телефон</label>
-        <input type="tel" id="phone" name="phone" required placeholder="+7 999 123-45-67">
+        <label for="email">Почта</label>
+        <input type="email" id="email" name="email" required placeholder="example@yandex.ru">
 
         <label for="city">Город</label>
         <input type="text" id="city" name="city" required placeholder="Казань, Москва и т.д.">
 
         <label for="problem">Что не работает</label>
-        <textarea id="problem" name="problem" required placeholder="Ноутбук не включается, касса не печатает, Windows не ставится..."></textarea>
+        <textarea id="problem" name="problem" required placeholder="Ноутбук не включается, Windows не ставится, ПК тормозит..."></textarea>
 
         <label for="model">Модель устройства</label>
-        <input type="text" id="model" name="model" placeholder="HP Pavilion, Эвотор, Штрих-М и т.п.">
-
-        <label for="time">Когда удобно перезвонить</label>
-        <input type="text" id="time" name="time" placeholder="После 18:00, в выходные, днём">
+        <input type="text" id="model" name="model" placeholder="HP Pavilion, ASUS, Lenovo и т.п.">
 
         <button type="submit">Отправить заявку</button>
       </form>
 
       <div class="success-msg" id="success-msg">
-        Заявка отправлена! Перезвоню в течение 2 часов.
+        Заявка отправлена! Отвечу на почту в течение 2 часов.
       </div>
     </div>
 
-    <!-- Контакты -->
     <div class="contacts">
       <p><strong>ИП Хайрутдинов А.Т.</strong></p>
       <p>ОКВЭД 62.01, 62.09 · УСН 6%</p>
@@ -152,14 +125,12 @@
       <p style="margin-top: 10px; font-size: 12px; color: #666;">Работаю по всей России удалённо, выезды — по Казани</p>
     </div>
 
-    <!-- Футер -->
     <div class="footer">
       <p>© 2026 Айдар — ИТ-мастер</p>
     </div>
 
   </div>
 
-  <!-- AJAX-отправка формы -->
   <script>
     const form = document.getElementById('my-form');
     const successMsg = document.getElementById('success-msg');
